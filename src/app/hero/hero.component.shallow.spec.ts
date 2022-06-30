@@ -72,7 +72,7 @@ describe('HeroComponent',()=>{
         expect(fixture.componentInstance.onDeleteClick).toHaveBeenCalledWith(event);
     })
     
-it(`should emit deleteEmitter
+xit(`should emit deleteEmitter
 when onDeleteClick button is clicked (correct)
 `,()=>{
     const event = {
@@ -83,8 +83,7 @@ when onDeleteClick button is clicked (correct)
 fixture.debugElement.query(By.css('button'))
 .triggerEventHandler('click',{stopPropagation:()=>{}});
 
-//fixture.detectChanges()
-//fixture.componentInstance.onDeleteClick(event)
+
 
 expect(spyEMit).toHaveBeenCalledWith()
 

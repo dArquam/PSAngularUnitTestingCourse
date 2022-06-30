@@ -44,7 +44,7 @@ xit('should set heroes (correct)',()=>{
 
     expect(fixture.componentInstance.heroes.length).toBe(2)
 })
-xit(`should call heroService.deleteHero
+it(`should call heroService.deleteHero
 when Hero Component's delete button is clicked (correct)
 `,()=>{
     spyOn(fixture.componentInstance,'delete')
@@ -53,8 +53,15 @@ fixture.detectChanges();
 
 const heroComponentDEs = fixture.debugElement.queryAll(By.directive(HeroComponent));
 
-heroComponentDEs[0].query(By.css('button'))
-.triggerEventHandler('click',{stopPropagation:()=>{}});
+// first approach:
+// heroComponentDEs[0].query(By.css('button'))
+// .triggerEventHandler('click',{stopPropagation:()=>{}});
+
+// second approach:
+// (<HeroComponent>heroComponentDEs[0].componentInstance).delete.next();
+
+//third approach
+heroComponentDEs[0].triggerEventHandler('delete',null);
 
 
  expect(fixture.componentInstance.delete).toHaveBeenCalledWith(HEROES[0])

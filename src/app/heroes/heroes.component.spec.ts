@@ -4,7 +4,7 @@ import { HeroService } from "../hero.service";
 
 import { HeroesComponent } from "./heroes.component"
 
-describe('HeroesComponent',()=>{
+xdescribe('HeroesComponent',()=>{
     let component:HeroesComponent;
     let mockHeroService;
     let Heroes;
@@ -21,7 +21,7 @@ describe('HeroesComponent',()=>{
     })
 
     describe('delete',()=>{
-        it('should delete Heroes when #delete is called',()=>{
+        xit('should delete Heroes when #delete is called',()=>{
             mockHeroService.deleteHero.and.returnValue(of(true))
             component.heroes = Heroes;
 
@@ -29,7 +29,7 @@ describe('HeroesComponent',()=>{
 
             expect(component.heroes.length).toBe(0)
         })
-        it('should call deleteHero',()=>{
+        xit('should call deleteHero',()=>{
             component.heroes = Heroes;
             mockHeroService.deleteHero.and.returnValue(of(true))
             

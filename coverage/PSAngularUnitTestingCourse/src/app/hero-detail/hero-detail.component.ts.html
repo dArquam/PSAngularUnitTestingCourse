@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/app/heroes/heroes.component.ts</title>
+    <title>Code coverage report for src/app/hero-detail/hero-detail.component.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../prettify.css" />
     <link rel="stylesheet" href="../../../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../index.html">All files</a> / <a href="index.html">src/app/heroes</a> heroes.component.ts</h1>
+        <h1><a href="../../../index.html">All files</a> / <a href="index.html">src/app/hero-detail</a> hero-detail.component.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>21/21</span>
+                <span class='fraction'>6/18</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>8/8</span>
+                <span class='fraction'>0/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">37.5% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>17/17</span>
+                <span class='fraction'>6/16</span>
             </div>
         
             
@@ -55,7 +55,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -107,75 +107,75 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, OnInit } from '@angular/core';
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 &nbsp;
-import { Hero } from '../hero';
-import { HeroService } from '../hero.service';
+import { Hero }         from '../hero';
+import { HeroService }  from '../hero.service';
 &nbsp;
 @Component({
-  selector: 'app-heroes',
-  templateUrl: './heroes.component.html',
-  styleUrls: ['./heroes.component.css']
+  selector: 'app-hero-detail',
+  templateUrl: './hero-detail.component.html',
+  styleUrls: [ './hero-detail.component.css' ]
 })
-export class HeroesComponent implements OnInit {
-  heroes: Hero[];
+export class HeroDetailComponent implements OnInit {
+  @Input() hero: Hero;
 &nbsp;
-  constructor(private heroService: HeroService) { }
+<span class="fstat-no" title="function not covered" >  constructor(</span>
+    private <span class="cstat-no" title="statement not covered" >route: ActivatedRoute,</span>
+    private <span class="cstat-no" title="statement not covered" >heroService: HeroService,</span>
+    private <span class="cstat-no" title="statement not covered" >location: Location</span>
+  ) {}
 &nbsp;
-  ngOnInit() {
-    this.getHeroes();
+<span class="fstat-no" title="function not covered" >  ngOnInit(</span>): void {
+<span class="cstat-no" title="statement not covered" >    this.getHero();</span>
   }
 &nbsp;
-  getHeroes(): void {
-    this.heroService.getHeroes()
-    .subscribe(heroes =&gt; this.heroes = heroes);
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >  getHero(</span></span>): void {
+    const id = <span class="cstat-no" title="statement not covered" >+this.route.snapshot.paramMap.get('id');</span>
+<span class="cstat-no" title="statement not covered" >    this.heroService.getHero(id)</span>
+      .subscribe(<span class="fstat-no" title="function not covered" >hero </span>=&gt; <span class="cstat-no" title="statement not covered" >this.hero = hero);</span>
   }
 &nbsp;
-  add(name: string): void {
-    name = name.trim();
-    var strength = 11
-    if (!name) { return; }
-    this.heroService.addHero({ name, strength } as Hero)
-      .subscribe(hero =&gt; {
-        this.heroes.push(hero);
-      });
+<span class="fstat-no" title="function not covered" >  goBack(</span>): void {
+<span class="cstat-no" title="statement not covered" >    this.location.back();</span>
   }
 &nbsp;
-  delete(hero: Hero): void {
-    this.heroes = this.heroes.filter(h =&gt; h !== hero);
-    this.heroService.deleteHero(hero).subscribe();
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" > save(</span></span>): void {
+<span class="cstat-no" title="statement not covered" >    this.heroService.updateHero(this.hero)</span>
+      .subscribe(<span class="fstat-no" title="function not covered" >() =&gt; <span class="cstat-no" title="statement not covered" >t</span>his.goBack());</span>
   }
-&nbsp;
 }
 &nbsp;</pre></td></tr></table></pre>
 

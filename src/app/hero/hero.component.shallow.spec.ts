@@ -9,7 +9,7 @@ describe('HeroComponent',()=>{
     beforeEach(()=>{
         TestBed.configureTestingModule({
             declarations:[HeroComponent],
-            schemas:[NO_ERRORS_SCHEMA]
+            
         });
         fixture = TestBed.createComponent(HeroComponent);
         
@@ -60,6 +60,35 @@ describe('HeroComponent',()=>{
     //      expect(fixture.componentInstance.delete.emit).toHaveBeenCalled()
 
     // })
-   
+
+    it('should call #onDeleteClick',()=>{
+        const event = {
+            stopPropagation:()=>{}
+        }
+        spyOn(fixture.componentInstance,'onDeleteClick');
+
+        fixture.componentInstance.onDeleteClick(event);
+
+        expect(fixture.componentInstance.onDeleteClick).toHaveBeenCalledWith(event);
+    })
+    
+it(`should emit deleteEmitter
+when onDeleteClick button is clicked (correct)
+`,()=>{
+    const event = {
+        stopPropagation:()=>{}
+    }
+ const spyEMit=spyOn(fixture.componentInstance.delete,'next')
+
+fixture.debugElement.query(By.css('button'))
+.triggerEventHandler('click',{stopPropagation:()=>{}});
+
+//fixture.detectChanges()
+//fixture.componentInstance.onDeleteClick(event)
+
+expect(spyEMit).toHaveBeenCalledWith()
+
+})
+
 
 })

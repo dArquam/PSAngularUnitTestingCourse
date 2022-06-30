@@ -37,15 +37,15 @@ beforeEach(()=>{
     fixture = TestBed.createComponent(HeroesComponent);
     
 })
-it('should set heroes',()=>{
+xit('should set heroes (correct)',()=>{
     mockHeroService.getHeroes.and.returnValue(of(HEROES));
 
     fixture.detectChanges();
 
     expect(fixture.componentInstance.heroes.length).toBe(2)
 })
-it(`should call heroService.deleteHero
-when Hero Component's delete button is clicked
+xit(`should call heroService.deleteHero
+when Hero Component's delete button is clicked (correct)
 `,()=>{
     spyOn(fixture.componentInstance,'delete')
 mockHeroService.getHeroes.and.returnValue(of(HEROES));
@@ -105,12 +105,12 @@ xit('should call add hero if name is not defined',()=>{
     expect(mockHeroService.addHero).not.toHaveBeenCalledWith(HERO);
 })
 
-it('should call add method',()=>{
+xit('should call add method (correct)',()=>{
     spyOn(fixture.componentInstance,'add');
     fixture.componentInstance.add('danish')
     expect(fixture.componentInstance.add).toHaveBeenCalledWith('danish')
 })
-it('should add Hero when #add is called',()=>{
+xit('should add Hero when #add is called (correct)',()=>{
     const name='danish';
     const strength=11;
 
@@ -132,7 +132,7 @@ it('should add Hero when #add is called',()=>{
 
 })
 
-it('should not add Hero when #add is called and name is null',()=>{
+xit('should not add Hero when #add is called and name is null (correct)',()=>{
     const name=null;
     const strength=11;
 
@@ -154,6 +154,84 @@ it('should not add Hero when #add is called and name is null',()=>{
 
 })
 
+// start revision
+it('should add Heroes on the call of #getHeroes',()=>{
+    mockHeroService.getHeroes.and.returnValue(of(HEROES));
+    fixture.detectChanges()
+    expect(fixture.componentInstance.heroes.length).toBe(2)
+})
+it('should call #add',()=>{
+    spyOn(fixture.componentInstance,'add');
 
+    fixture.componentInstance.add('danish');
+
+    expect(fixture.componentInstance.add).toHaveBeenCalledWith('danish')
+})
+it('should add Hero when #add is called',()=>{
+    // const name="danish";
+    const strength=11;
+    const hero={
+        id:23,
+        name:'danish',
+        strength:20
+    }
+    fixture.componentInstance.heroes=[]
+    mockHeroService.addHero.and.returnValue(of(hero));
+    
+    fixture.componentInstance.add('danish')
+
+    expect(fixture.componentInstance.heroes.length).toBe(1)
+})
+it('should call heroService.addHero when #add is called',()=>{
+     const name="danish";
+    const strength=11;
+    const hero={
+        id:23,
+        name:'danish',
+        strength:20
+    }
+    fixture.componentInstance.heroes=[]
+    mockHeroService.addHero.and.returnValue(of(hero));
+    
+    fixture.componentInstance.add('danish')
+
+    expect(mockHeroService.addHero).toHaveBeenCalledWith({name,strength})
+})
+it('should not call heroService.addHero when #add is called with empty string',()=>{
+    const name="";
+   const strength=11;
+   const hero={
+       id:23,
+       name:'danish',
+       strength:20
+   }
+   fixture.componentInstance.heroes=[]
+   mockHeroService.addHero.and.returnValue(of(hero));
+   
+   fixture.componentInstance.add('')
+
+   expect(mockHeroService.addHero).not.toHaveBeenCalledWith({name,strength})
+})
+it('should call #delete',()=>{
+    spyOn(fixture.componentInstance,'delete') 
+    const hero={
+        id:1,
+        name:'danish',
+        strength:20
+    }
+    fixture.componentInstance.delete(hero);
+    expect(fixture.componentInstance.delete).toHaveBeenCalled()
+})
+it('should remove hero when #delete is called',()=>{
+    fixture.componentInstance.heroes=HEROES;
+    mockHeroService.deleteHero.and.returnValue(of(HEROES[0]));
+
+    fixture.componentInstance.delete(HEROES[0]);
+    
+    
+    expect(fixture.componentInstance.heroes.length).toBe(1)
+})
+
+//revision end
 
 })

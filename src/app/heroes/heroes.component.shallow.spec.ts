@@ -6,7 +6,7 @@ import { of } from "rxjs";
 import { HeroService } from "../hero.service";
 import { HeroesComponent } from "./heroes.component"
 
-describe('HeroesComponent (shallow tests )',()=>{
+xdescribe('HeroesComponent (shallow tests )',()=>{
     let fixture:ComponentFixture<HeroesComponent>;
     let mockHeroService;
     let HEROES;
@@ -30,14 +30,14 @@ beforeEach(()=>{
     fixture = TestBed.createComponent(HeroesComponent);
 })
 
-it('should set heroes correctly from service',()=>{
+xit('should set heroes correctly from service',()=>{
     mockHeroService.getHeroes.and.returnValue(of(HEROES));
 
     fixture.detectChanges()
 
     expect(fixture.componentInstance.heroes.length).toBe(1);
 });
-it('should call getHeroes',()=>{
+xit('should call getHeroes',()=>{
     mockHeroService.getHeroes.and.returnValue(of(HEROES))
     fixture.detectChanges();
     expect(mockHeroService.getHeroes).toHaveBeenCalled();
